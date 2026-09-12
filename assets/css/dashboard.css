@@ -1,0 +1,96 @@
+/* ===============================================
+   Dashboard & Page Specific Layouts
+   =============================================== */
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+.service-card { padding: var(--spacing-lg); display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.service-card__header { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--spacing-sm); }
+.service-card__title { font-size: var(--fs-base); font-weight: 600; }
+.service-card__desc { font-size: var(--fs-sm); color: var(--text-muted); min-height: 40px; }
+.service-card__meta { display: flex; flex-direction: column; gap: 4px; font-size: var(--fs-sm); border-top: 1px dashed var(--border-color); border-bottom: 1px dashed var(--border-color); padding: var(--spacing-sm) 0; }
+.service-card__footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+
+/* Wallet Grid */
+.wallet-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-lg);
+}
+.balance-card { padding: var(--spacing-xl); text-align: center; display: flex; flex-direction: column; gap: var(--spacing-md); }
+.balance-card__label { color: var(--text-muted); font-size: var(--fs-sm); }
+.balance-card__amount { font-size: var(--fs-4xl); font-weight: 700; color: var(--color-navy); }
+html[data-theme="dark"] .balance-card__amount { color: #fff; }
+
+/* Inbox Layout (Tickets) */
+.inbox-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: var(--spacing-lg);
+    height: calc(100vh - 250px);
+}
+.inbox-list, .inbox-chat { display: flex; flex-direction: column; overflow: hidden; padding: 0; }
+.inbox-list .card__header { padding: var(--spacing-md); }
+.ticket-items { overflow-y: auto; flex: 1; }
+.ticket-item { padding: var(--spacing-md); border-bottom: 1px solid var(--border-color-light); cursor: pointer; transition: background var(--transition-fast); }
+.ticket-item:hover { background: var(--bg-hover); }
+.ticket-item.active { background: var(--bg-input); border-left: 3px solid var(--color-gold); }
+.ticket-item__top { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.ticket-item__name { font-weight: 600; font-size: var(--fs-sm); }
+.ticket-item__time { font-size: var(--fs-xs); color: var(--text-muted); }
+.ticket-item__msg { font-size: var(--fs-xs); color: var(--text-muted); margin-bottom: var(--spacing-xs); }
+
+.chat-header { padding: var(--spacing-md) var(--spacing-lg); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+.chat-title { font-size: var(--fs-base); }
+.chat-body { flex: 1; overflow-y: auto; padding: var(--spacing-lg); display: flex; flex-direction: column; gap: var(--spacing-md); }
+.chat-message { display: flex; gap: var(--spacing-sm); max-width: 70%; }
+.chat-message--right { align-self: flex-end; flex-direction: row-reverse; }
+.chat-content { background: var(--bg-input); padding: var(--spacing-sm) var(--spacing-md); border-radius: var(--radius-lg); font-size: var(--fs-sm); }
+.chat-message--right .chat-content { background: var(--color-navy); color: #fff; }
+.chat-footer { padding: var(--spacing-md); border-top: 1px solid var(--border-color); display: flex; gap: var(--spacing-sm); }
+.chat-footer textarea { resize: none; height: 40px; }
+
+/* Settings Layout */
+.settings-card { display: flex; padding: 0; min-height: 500px; }
+.settings-content { flex: 1; padding: var(--spacing-xl); }
+
+/* API Keys & Code Blocks */
+.api-key-display { display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg); }
+.code-block {
+    background: var(--color-navy-dark);
+    color: #fff;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-family: monospace;
+    font-size: var(--fs-sm);
+    overflow-x: auto;
+}
+
+/* Invoice & Affiliate Grids */
+.invoice-grid, .affiliate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+.invoice-card, .affiliate-link-card { padding: var(--spacing-lg); }
+.invoice-amount { font-size: var(--fs-2xl); font-weight: 700; margin: var(--spacing-sm) 0; }
+.invoice-date { color: var(--text-muted); font-size: var(--fs-sm); margin-bottom: var(--spacing-md); }
+.invoice-actions { display: flex; gap: var(--spacing-sm); }
+
+.qr-placeholder {
+    width: 150px; height: 150px;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    margin: var(--spacing-lg) auto 0;
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+}
+
+/* Filter Card (Services Page) */
+.filter-card { padding: var(--spacing-md); margin-bottom: var(--spacing-lg); }
+.filter-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--spacing-sm); }

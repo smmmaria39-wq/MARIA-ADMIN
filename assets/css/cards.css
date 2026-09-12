@@ -1,0 +1,114 @@
+/* ===============================================
+   Cards CSS
+   =============================================== */
+
+.card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color-light);
+    transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+.card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.card__header {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-bottom: 1px solid var(--border-color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__title { font-size: var(--fs-lg); font-weight: 600; }
+.card__dropdown, .card__actions { display: flex; gap: var(--spacing-sm); }
+
+/* Stat Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stat-card { padding: var(--spacing-lg); }
+.stat-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+.stat-card__label { color: var(--text-muted); font-size: var(--fs-sm); font-weight: 500; }
+.stat-card__icon {
+    width: 40px; height: 40px;
+    border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+}
+.stat-card__icon--primary { background: var(--color-navy); color: #fff; }
+.stat-card__icon--info { background: var(--color-info-bg); color: var(--color-info); }
+.stat-card__icon--success { background: var(--color-success-bg); color: var(--color-success); }
+.stat-card__icon--warning { background: var(--color-warning-bg); color: var(--color-warning); }
+.stat-card__icon--danger { background: var(--color-danger-bg); color: var(--color-danger); }
+.stat-card__icon--gold { background: var(--color-gold-light); color: var(--color-gold); }
+
+.stat-card__value { font-size: var(--fs-2xl); font-weight: 700; margin-bottom: var(--spacing-xs); }
+.stat-card__trend { font-size: var(--fs-xs); font-weight: 500; }
+
+/* Dashboard Layout Rows */
+.dashboard-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+.dashboard-row:last-child { margin-bottom: 0; }
+
+.chart-card { padding: var(--spacing-lg); }
+.chart-placeholder { height: 300px; margin-top: var(--spacing-lg); }
+
+/* Quick Actions */
+.quick-actions-card { padding: var(--spacing-lg); }
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+.quick-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-color-light);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+}
+.quick-action-btn:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Recent Activity Lists */
+.notification-list { padding: var(--spacing-lg); }
+.notification-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color-light);
+}
+.notification-item:last-child { border-bottom: none; margin-bottom: 0; }
+.notification__icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; flex-shrink: 0;
+}
+.notification__icon--success { background: var(--color-success-bg); color: var(--color-success); }
+.notification__icon--warning { background: var(--color-warning-bg); color: var(--color-warning); }
+.notification__icon--info { background: var(--color-info-bg); color: var(--color-info); }
+.notification__content p { font-size: var(--fs-sm); margin-bottom: 2px; }
+.notification__time { font-size: var(--fs-xs); color: var(--text-muted); }

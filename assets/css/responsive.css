@@ -1,0 +1,124 @@
+/* ===============================================
+   Responsive CSS
+   Mobile adaptations & Drawer
+   =============================================== */
+
+@media (max-width: 1024px) {
+    .dashboard-row {
+        grid-template-columns: 1fr;
+    }
+    .wallet-grid {
+        grid-template-columns: 1fr;
+    }
+    .inbox-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    /* Mobile Ticket Navigation */
+    .inbox-list { 
+        display: block; 
+    }
+    .inbox-chat {
+        display: none; /* Hidden until a ticket is clicked */
+    }
+    .inbox-layout.show-detail .inbox-list {
+        display: none; /* Hide list when viewing a ticket */
+    }
+    .inbox-layout.show-detail .inbox-chat {
+        display: flex; /* Show chat */
+        flex-direction: column;
+        min-height: 70vh; /* Give it usable height */
+    }
+    .back-to-tickets-btn {
+        display: flex !important; /* Show back button on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Layout Shifts */
+    .main-wrapper {
+        margin-left: 0;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: var(--shadow-xl);
+    }
+    .app-container.sidebar-open .sidebar {
+        transform: translateX(0);
+    }
+    .app-container.sidebar-collapsed .main-wrapper {
+        margin-left: 0;
+    }
+
+    /* Navbar Adjustments */
+    .navbar__toggle {
+        display: block;
+    }
+    .navbar__search {
+        display: none;
+    }
+    .profile__info {
+        display: none;
+    }
+    .navbar__balance {
+        font-size: var(--fs-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    /* Content Spacing */
+    .content-area {
+        padding: var(--spacing-md);
+    }
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    /* Form & Grid Stacking */
+    .form-grid,
+    .wallet-grid,
+    .services-grid,
+    .filter-grid,
+    .quick-actions-grid,
+    .invoice-grid,
+    .affiliate-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .form-group--full {
+        grid-column: 1 / -1;
+    }
+
+    .settings-card {
+        flex-direction: column;
+    }
+    .tabs--vertical {
+        flex-direction: row;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        overflow-x: auto;
+    }
+    .tabs--vertical .tab {
+        border-right: none;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+    }
+    .tabs--vertical .tab.active {
+        border-right: none;
+        border-bottom-color: var(--color-gold);
+    }
+
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+
+    /* Mobile Bottom Navigation (Optional visual cue) */
+    .navbar__right {
+        gap: var(--spacing-xs);
+    }
+}
