@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Dashboard | SMMMARIA Admin</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/cards.css">
+    <link rel="stylesheet" href="assets/css/buttons.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="assets/css/tables.css">
+    <link rel="stylesheet" href="assets/css/badges.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/toast.css">
+    <link rel="stylesheet" href="assets/css/charts.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/theme-light.css">
+    <link rel="stylesheet" href="assets/css/theme-dark.css">
+    
+</head>
+<body data-page="dashboard">
+    <div class="app-container">
+        
+<!-- SIDEBAR COMPONENT -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+        <a href="dashboard.html" class="sidebar__logo">SMM<span class="text-gold">MARIA</span></a>
+        <button class="sidebar__collapse-btn" id="collapse-btn" aria-label="Collapse Sidebar">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+    </div>
+<nav class="sidebar__nav">
+    <ul class="sidebar__menu">
+        <li class="sidebar__item active"><a href="dashboard.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span class="link-text">Dashboard</span></a></li>
+        
+        <li class="sidebar__item"><a href="users.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span class="link-text">Users</span></a></li>
+        <li class="sidebar__item"><a href="orders.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"></path><polyline points="9 11 12 14 15 11"></polyline><line x1="12" y1="2" x2="12" y2="14"></line></svg><span class="link-text">Orders</span><span class="badge badge--notification">5</span></a></li>
+        <li class="sidebar__item"><a href="services.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span class="link-text">Services</span></a></li>
+        <li class="sidebar__item"><a href="categories.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span class="link-text">Categories</span></a></li>
+         <!-- ADMIN ACCOUNT INVENTORY LINK -->
+                <li class="sidebar__item "><a href="admin-accounts.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span class="link-text">Account Inventory</span></a></li>
+        <li class="sidebar__item"><a href="suppliers.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg><span class="link-text">Suppliers</span></a></li>
+        <li class="sidebar__item"><a href="wallets.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg><span class="link-text">Wallets</span></a></li>
+        <li class="sidebar__item"><a href="payments.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg><span class="link-text">Payments</span><span class="badge badge--notification">2</span></a></li>
+        <li class="sidebar__item"><a href="tickets.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><span class="link-text">Tickets</span></a></li>
+        
+        <!-- NEW LIVE CHAT LINK -->
+        <li class="sidebar__item"><a href="support.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span class="link-text">Live Chat</span></a></li>
+
+        <li class="sidebar__item"><a href="affiliates.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span class="link-text">Affiliates</span></a></li>
+       
+    
+        <li class="sidebar__item"><a href="announcements.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg><span class="link-text">Announcements</span></a></li>
+        <li class="sidebar__item"><a href="reports.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><span class="link-text">Reports</span></a></li>
+        <li class="sidebar__item"><a href="settings.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span class="link-text">Settings</span></a></li>
+        <li class="sidebar__item"><a href="profile.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="link-text">Profile</span></a></li>
+        
+        <li class="sidebar__item"><a href="child-panels.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span class="link-text">Child Panels</span></a></li>
+        <li class="sidebar__item"><a href="create-child-panel.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg><span class="link-text">Create Child Panels</span></a></li>
+        <li class="sidebar__item"><a href="child-panel-wallet.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg><span class="link-text">Child Panels Wallet</span></a></li>
+        <li class="sidebar__item"><a href="child-panel-details.html" class="sidebar__link"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg><span class="link-text">Child Panels Details</span></a></li>
+        
+    </ul>
+</nav> 
+    
+    <div class="sidebar__footer">
+        <a href="login.html" class="sidebar__link sidebar__link--logout" onclick="handleLogout()"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg><span class="link-text">Logout</span></a>
+    </div>
+</aside> 
+
+        <!-- MAIN CONTENT AREA -->
+        <div class="main-wrapper">
+            
+            <!-- NAVBAR COMPONENT -->
+            <header class="navbar">
+                <div class="navbar__left">
+                    <button class="navbar__toggle" id="mobile-menu-toggle" aria-label="Open Menu">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                    <div class="navbar__search">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" placeholder="Search users, orders, IDs..." class="navbar__search-input" aria-label="Search">
+                    </div>
+                </div>
+                
+                <div class="navbar__right">
+                    <div class="system-status">
+                        <span class="status-dot status-dot--success"></span>
+                        <span class="status-text">System Operational</span>
+                    </div>
+                    
+                    <button class="navbar__icon-btn" aria-label="Notifications">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        <span class="badge badge--dot"></span>
+                    </button>
+                    
+                    <button class="navbar__icon-btn" aria-label="Messages">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </button>
+
+                    <button class="navbar__icon-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                    
+                    <div class="navbar__profile">
+                        <div class="avatar">..</div>
+                        <div class="profile__info">
+                            <span class="profile__name">Guest</span>
+                            <span class="profile__role">User</span>
+                        </div>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                </div>
+            </header>
+
+            <!-- PAGE SPECIFIC CONTENT -->
+            <main class="content-area" id="page-content">
+                <div class="breadcrumb">
+                    <a href="dashboard.html">Admin</a> / <span>Dashboard</span>
+                </div>
+                
+                <div class="page-header">
+                    <h1 class="page-title">Dashboard Overview</h1>
+                    <div class="page-actions">
+                        <button class="btn btn--outline">Export Data</button>
+                        <button class="btn btn--primary">+ Quick Action</button>
+                    </div>
+                </div>
+
+                <!-- STATS GRID -->
+                <div class="stats-grid">
+                    <div class="card stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__label">Total Revenue (Month)</span>
+                            <div class="stat-card__icon stat-card__icon--success">$</div>
+                        </div>
+                        <h3 class="stat-card__value">$0.00</h3>
+                        <p class="stat-card__trend text-muted">All time</p>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__label">Total Users</span>
+                            <div class="stat-card__icon stat-card__icon--info">U</div>
+                        </div>
+                        <h3 class="stat-card__value">0</h3>
+                        <p class="stat-card__trend text-muted">All time</p>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__label">Total Orders</span>
+                            <div class="stat-card__icon stat-card__icon--primary">O</div>
+                        </div>
+                        <h3 class="stat-card__value">0</h3>
+                        <p class="stat-card__trend text-muted">All time</p>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__label">Pending Orders</span>
+                            <div class="stat-card__icon stat-card__icon--warning">!</div>
+                        </div>
+                        <h3 class="stat-card__value">0</h3>
+                        <p class="stat-card__trend text-muted">Awaiting processing</p>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__label">Active Suppliers</span>
+                            <div class="stat-card__icon stat-card__icon--info">S</div>
+                        </div>
+                        <h3 class="stat-card__value">0</h3>
+                        <p class="stat-card__trend text-muted">All time</p>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__label">Open Tickets</span>
+                            <div class="stat-card__icon stat-card__icon--danger">T</div>
+                        </div>
+                        <h3 class="stat-card__value">0</h3>
+                        <p class="stat-card__trend text-muted">All time</p>
+                    </div>
+                </div>
+
+                <!-- CHARTS & TABLES ROW -->
+                <div class="dashboard-row">
+                    <div class="card chart-card">
+                        <div class="card__header">
+                            <h3 class="card__title">Revenue Overview</h3>
+                            <select class="card__dropdown">
+                                <option>Last 30 Days</option>
+                                <option>Last 7 Days</option>
+                            </select>
+                        </div>
+                        <div class="chart-placeholder" id="chart-revenue">
+                            <!-- Chart will be injected by JS -->
+                        </div>
+                    </div>
+                    <div class="card recent-activity-card">
+                        <div class="card__header">
+                            <h3 class="card__title">Recent Activity</h3>
+                        </div>
+                        <ul class="notification-list">
+                            <li class="notification-item">
+                                <div class="notification__icon notification__icon--info">i</div>
+                                <div class="notification__content">
+                                    <p>No recent activity.</p>
+                                    <span class="notification__time">Just now</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- LATEST ORDERS TABLE -->
+                <div class="card table-card">
+                    <div class="card__header">
+                        <h3 class="card__title">Latest Orders</h3>
+                        <a href="orders.html" class="text-link">View All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>User</th>
+                                    <th>Service</th>
+                                    <th>Charge</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be injected by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </main>
+
+            <!-- FOOTER COMPONENT -->
+            <footer class="footer">
+                <p class="footer__text">© 2023 SMMMARIA Admin Panel. All rights reserved.</p>
+                <div class="footer__links">
+                    <a href="#">Documentation</a>
+                    <a href="#">Support</a>
+                </div>
+            </footer>
+        </div>
+
+        <!-- MOBILE OVERLAY -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    </div>
+
+    <!-- JS Imports -->
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

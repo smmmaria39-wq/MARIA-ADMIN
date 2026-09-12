@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>SMMMARIA Admin Panel</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #08164A;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid #F5A623;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+
+    <script>
+        // Routing Logic
+        (function() {
+            const token = localStorage.getItem('smmmaria_token');
+            if (token) {
+                // If logged in, go to dashboard
+                window.location.href = 'dashboard.html';
+            } else {
+                // If not logged in, go to login page
+                window.location.href = 'login.html';
+            }
+        })();
+    </script>
+</body>
+</html>

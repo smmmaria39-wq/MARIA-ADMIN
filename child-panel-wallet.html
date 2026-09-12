@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Child Panel Wallets | SMMMARIA Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/cards.css">
+    <link rel="stylesheet" href="assets/css/buttons.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="assets/css/tables.css">
+    <link rel="stylesheet" href="assets/css/badges.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/toast.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/theme-light.css">
+    <link rel="stylesheet" href="assets/css/theme-dark.css">
+</head>
+<body data-page="child-panel-wallet">
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar__header">
+                <a href="dashboard.html" class="sidebar__logo">SMM<span class="text-gold">MARIA</span></a>
+                <button class="sidebar__collapse-btn" id="collapse-btn">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+            </div>
+            <nav class="sidebar__nav">
+                <ul class="sidebar__menu">
+                    <li class="sidebar__item"><a href="dashboard.html" class="sidebar__link"><span class="link-text">Dashboard</span></a></li>
+                    <li class="sidebar__item"><a href="users.html" class="sidebar__link"><span class="link-text">Users</span></a></li>
+                    <li class="sidebar__item"><a href="orders.html" class="sidebar__link"><span class="link-text">Orders</span><span class="badge badge--notification">5</span></a></li>
+                    <li class="sidebar__item"><a href="services.html" class="sidebar__link"><span class="link-text">Services</span></a></li>
+                    <li class="sidebar__item"><a href="categories.html" class="sidebar__link"><span class="link-text">Categories</span></a></li>
+                    <li class="sidebar__item"><a href="suppliers.html" class="sidebar__link"><span class="link-text">Suppliers</span></a></li>
+                    <li class="sidebar__item active"><a href="child-panels.html" class="sidebar__link"><span class="link-text">Child Panels</span></a></li>
+                    <li class="sidebar__item"><a href="wallets.html" class="sidebar__link"><span class="link-text">Wallets</span></a></li>
+                    <li class="sidebar__item"><a href="payments.html" class="sidebar__link"><span class="link-text">Payments</span><span class="badge badge--notification">2</span></a></li>
+                    <li class="sidebar__item"><a href="tickets.html" class="sidebar__link"><span class="link-text">Tickets</span></a></li>
+                    <li class="sidebar__item"><a href="affiliates.html" class="sidebar__link"><span class="link-text">Affiliates</span></a></li>
+                    <li class="sidebar__item"><a href="announcements.html" class="sidebar__link"><span class="link-text">Announcements</span></a></li>
+                    <li class="sidebar__item"><a href="reports.html" class="sidebar__link"><span class="link-text">Reports</span></a></li>
+                    <li class="sidebar__item"><a href="settings.html" class="sidebar__link"><span class="link-text">Settings</span></a></li>
+                    <li class="sidebar__item"><a href="profile.html" class="sidebar__link"><span class="link-text">Profile</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar__footer">
+                <a href="login.html" class="sidebar__link sidebar__link--logout"><span class="link-text">Logout</span></a>
+            </div>
+        </aside>
+
+        <div class="main-wrapper">
+            <header class="navbar">
+                <div class="navbar__left">
+                    <button class="navbar__toggle" id="mobile-menu-toggle">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                    <div class="navbar__search">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" placeholder="Search..." class="navbar__search-input">
+                    </div>
+                </div>
+                <div class="navbar__right">
+                    <div class="system-status">
+                        <span class="status-dot status-dot--success"></span>
+                        <span class="status-text">System Operational</span>
+                    </div>
+                    <button class="navbar__icon-btn" id="theme-toggle">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                    <div class="navbar__profile">
+                        <div class="avatar">AD</div>
+                        <div class="profile__info">
+                            <span class="profile__name">Admin User</span>
+                            <span class="profile__role">Super Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="content-area">
+                <div class="breadcrumb">
+                    <a href="dashboard.html">Admin</a> / <a href="child-panels.html">Child Panels</a> / <span>Wallets</span>
+                </div>
+
+                <div class="page-header">
+                    <h1 class="page-title">Child Panel Wallets</h1>
+                    <div class="page-actions">
+                        <button class="btn btn--outline" id="bulkTopUpBtn">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"></path></svg>
+                            Bulk Top Up
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="card stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__label">Total Balance</span>
+                        </div>
+                        <h3 class="stat-card__value" id="statTotalBalance">$0.00</h3>
+                        <span class="stat-card__subtext">Across all panels</span>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__label">Total Deposited</span>
+                        </div>
+                        <h3 class="stat-card__value" id="statTotalDeposited">$0.00</h3>
+                        <span class="stat-card__subtext">All time deposits</span>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__label">Total Deducted</span>
+                        </div>
+                        <h3 class="stat-card__value" id="statTotalDeducted">$0.00</h3>
+                        <span class="stat-card__subtext">All time deductions</span>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-card__top">
+                            <span class="stat-card__label">Low Balance</span>
+                        </div>
+                        <h3 class="stat-card__value" id="statLowBalance">0</h3>
+                        <span class="stat-card__subtext">Panels below $10</span>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filter-bar" style="margin-top: 20px;">
+                    <div class="filter-tabs" id="walletFilterTabs">
+                        <button class="filter-tab active" data-filter="all">All Panels</button>
+                        <button class="filter-tab" data-filter="active">Active</button>
+                        <button class="filter-tab" data-filter="suspended">Suspended</button>
+                        <button class="filter-tab" data-filter="low">Low Balance</button>
+                    </div>
+                    <div class="filter-actions">
+                        <div class="form-group form-group--inline" style="margin-bottom: 0;">
+                            <div class="form-input-wrap">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="form-input-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                <input type="text" class="form-input" id="walletSearch" placeholder="Search by name, owner, domain...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wallet Table -->
+                <div class="card table-card" style="margin-top: 20px;">
+                    <div class="card__header">
+                        <h3 class="card__title">Panel Wallets</h3>
+                        <span class="card__meta" id="walletTableCount">0 panels</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table datatable" id="walletTable">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40px;">
+                                        <input type="checkbox" class="form-checkbox" id="walletSelectAll">
+                                    </th>
+                                    <th data-sort="panel">Panel</th>
+                                    <th>Owner</th>
+                                    <th>Domain</th>
+                                    <th data-sort="balance" class="text-right">Balance</th>
+                                    <th class="text-right">Total Deposited</th>
+                                    <th class="text-right">Total Spent</th>
+                                    <th class="text-center">Status</th>
+                                    <th class="text-center">Plan</th>
+                                    <th style="width: 60px;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="walletTableBody">
+                                <tr>
+                                    <td colspan="10" class="text-center text-muted">No panels found.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer" id="walletTableFooter" style="display: none;">
+                        <span class="table-footer__info" id="walletShowingInfo">Showing 0 of 0</span>
+                        <div class="table-footer__pagination" id="walletPagination"></div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <p class="footer__text">© 2023 SMMMARIA Admin Panel. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    </div>
+
+    <!-- Add Funds Modal -->
+    <div class="modal" id="addFundsModal">
+        <div class="modal__overlay" data-modal-close="addFundsModal"></div>
+        <div class="modal__container modal__container--sm">
+            <div class="modal__header">
+                <h3 class="modal__title">Add Funds</h3>
+                <button class="modal__close" data-modal-close="addFundsModal">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <form id="addFundsForm" class="modal__body">
+                <input type="hidden" id="addFundsPanelId">
+                <p class="form-hint" id="addFundsPanelLabel" style="margin-bottom: 16px;">—</p>
+                <div class="form-group">
+                    <label class="form-label" for="addFundsAmount">Amount (USD)</label>
+                    <div class="form-input-wrap form-input-wrap--prefix">
+                        <span class="form-input-prefix">$</span>
+                        <input type="number" step="0.01" min="0.01" class="form-input" id="addFundsAmount" placeholder="0.00" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="addFundsDescription">Description</label>
+                    <input type="text" class="form-input" id="addFundsDescription" placeholder="e.g. Manual deposit, bonus, etc.">
+                </div>
+                <div class="form-preview" id="addFundsPreview">
+                    <div class="form-preview__row">
+                        <span class="form-preview__label">Current Balance</span>
+                        <span class="form-preview__value" id="addFundsCurrentBalance">$0.00</span>
+                    </div>
+                    <div class="form-preview__row">
+                        <span class="form-preview__label">After Top Up</span>
+                        <span class="form-preview__value text-success" id="addFundsNewBalance">$0.00</span>
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button type="button" class="btn btn--outline" data-modal-close="addFundsModal">Cancel</button>
+                    <button type="submit" class="btn btn--primary">Add Funds</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Deduct Funds Modal -->
+    <div class="modal" id="deductFundsModal">
+        <div class="modal__overlay" data-modal-close="deductFundsModal"></div>
+        <div class="modal__container modal__container--sm">
+            <div class="modal__header">
+                <h3 class="modal__title">Deduct Funds</h3>
+                <button class="modal__close" data-modal-close="deductFundsModal">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <form id="deductFundsForm" class="modal__body">
+                <input type="hidden" id="deductFundsPanelId">
+                <p class="form-hint" id="deductFundsPanelLabel" style="margin-bottom: 16px;">—</p>
+                <div class="form-group">
+                    <label class="form-label" for="deductFundsAmount">Amount (USD)</label>
+                    <div class="form-input-wrap form-input-wrap--prefix">
+                        <span class="form-input-prefix">$</span>
+                        <input type="number" step="0.01" min="0.01" class="form-input" id="deductFundsAmount" placeholder="0.00" required>
+                    </div>
+                    <p class="form-error" id="deductFundsError" style="display: none;">Amount exceeds current balance.</p>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="deductFundsDescription">Description</label>
+                    <input type="text" class="form-input" id="deductFundsDescription" placeholder="e.g. Refund, adjustment, etc.">
+                </div>
+                <div class="form-preview" id="deductFundsPreview">
+                    <div class="form-preview__row">
+                        <span class="form-preview__label">Current Balance</span>
+                        <span class="form-preview__value" id="deductFundsCurrentBalance">$0.00</span>
+                    </div>
+                    <div class="form-preview__row">
+                        <span class="form-preview__label">After Deduction</span>
+                        <span class="form-preview__value text-danger" id="deductFundsNewBalance">$0.00</span>
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button type="button" class="btn btn--outline" data-modal-close="deductFundsModal">Cancel</button>
+                    <button type="submit" class="btn btn--danger">Deduct Funds</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Set Balance Modal -->
+    <div class="modal" id="setBalanceModal">
+        <div class="modal__overlay" data-modal-close="setBalanceModal"></div>
+        <div class="modal__container modal__container--sm">
+            <div class="modal__header">
+                <h3 class="modal__title">Set Balance</h3>
+                <button class="modal__close" data-modal-close="setBalanceModal">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <form id="setBalanceForm" class="modal__body">
+                <input type="hidden" id="setBalancePanelId">
+                <p class="form-hint" id="setBalancePanelLabel" style="margin-bottom: 16px;">—</p>
+                <div class="form-group">
+                    <label class="form-label" for="setBalanceAmount">New Balance (USD)</label>
+                    <div class="form-input-wrap form-input-wrap--prefix">
+                        <span class="form-input-prefix">$</span>
+                        <input type="number" step="0.01" min="0" class="form-input" id="setBalanceAmount" placeholder="0.00" required>
+                    </div>
+                    <p class="form-hint form-hint--warning" style="margin-top: 6px;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        This will overwrite the current balance entirely.
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="setBalanceReason">Reason</label>
+                    <input type="text" class="form-input" id="setBalanceReason" placeholder="e.g. Balance correction" required>
+                </div>
+                <div class="modal__footer">
+                    <button type="button" class="btn btn--outline" data-modal-close="setBalanceModal">Cancel</button>
+                    <button type="submit" class="btn btn--primary">Set Balance</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Transaction History Modal -->
+    <div class="modal" id="historyModal">
+        <div class="modal__overlay" data-modal-close="historyModal"></div>
+        <div class="modal__container modal__container--lg">
+            <div class="modal__header">
+                <h3 class="modal__title">Transaction History</h3>
+                <button class="modal__close" data-modal-close="historyModal">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal__body" style="padding: 0;">
+                <div class="modal__subheader" style="padding: 16px 24px; border-bottom: 1px solid var(--border-color);">
+                    <span class="text-muted" style="font-size: 13px;">Panel: <strong class="text-body" id="historyPanelLabel">—</strong></span>
+                    <span class="text-muted" style="font-size: 13px; margin-left: 24px;">Balance: <strong class="text-gold" id="historyPanelBalance">$0.00</strong></span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table" id="historyTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th class="text-right">Amount</th>
+                                <th class="text-center">Source</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                            <tr>
+                                <td colspan="4" class="text-center text-muted">No transactions found.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-footer" id="historyTableFooter" style="display: none;">
+                    <span class="table-footer__info" id="historyShowingInfo">Showing 0 of 0</span>
+                    <div class="table-footer__pagination" id="historyPagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Top Up Modal -->
+    <div class="modal" id="bulkTopUpModal">
+        <div class="modal__overlay" data-modal-close="bulkTopUpModal"></div>
+        <div class="modal__container modal__container--sm">
+            <div class="modal__header">
+                <h3 class="modal__title">Bulk Top Up</h3>
+                <button class="modal__close" data-modal-close="bulkTopUpModal">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <form id="bulkTopUpForm" class="modal__body">
+                <div class="form-group">
+                    <label class="form-label">Selected Panels</label>
+                    <div class="form-input form-input--static" id="bulkSelectedCount">0 panels selected</div>
+                    <p class="form-hint" style="margin-top: 6px;">Select panels from the table using the checkboxes first.</p>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="bulkAmount">Amount Per Panel (USD)</label>
+                    <div class="form-input-wrap form-input-wrap--prefix">
+                        <span class="form-input-prefix">$</span>
+                        <input type="number" step="0.01" min="0.01" class="form-input" id="bulkAmount" placeholder="0.00" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="bulkDescription">Description</label>
+                    <input type="text" class="form-input" id="bulkDescription" placeholder="e.g. Monthly bonus">
+                </div>
+                <div class="form-preview" id="bulkTopUpPreview">
+                    <div class="form-preview__row">
+                        <span class="form-preview__label">Total Amount</span>
+                        <span class="form-preview__value text-gold" id="bulkTotalAmount">$0.00</span>
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button type="button" class="btn btn--outline" data-modal-close="bulkTopUpModal">Cancel</button>
+                    <button type="submit" class="btn btn--primary">Top Up All Selected</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
