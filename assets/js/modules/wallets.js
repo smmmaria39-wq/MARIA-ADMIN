@@ -1,89 +1,116 @@
-// ===============================================
-// Admin Wallets Module
-// ===============================================
-
 import { api } from '../utils/api.js';
 import { $ } from '../utils/helpers.js';
-import { formatCurrency } from '../utils/formatter.js';
+import { formatCurrency, formatDate } from '../utils/formatter.js';
 import { showToast } from '../components/toast.js';
 
-let activeUserId = null; // Stores the ID of the user we are adjusting
+// FIX: Store users in module scope to allow client-side search/filtering without re-fetching
+let allUsers = [];
 
-export default async function initWallets() {
- const tbody = $('.datatable tbody');
- if (!tbody) return;
- 
- try {
-  const response = await api.getUsers();
-  const users = response.data || response || [];
+export default async function initUsers() {
+  const tbody = $('.datatable tbody');
+  if (!tbody) return;
   
-  if (users.length === 0) {
-   tbody.innerHTML = `<tr><td colspan="6" class="text-center text-muted">No user wallets found.</td></tr>`;
-   return;
+  try {
+    const response = await api.getUsers();
+    allUsers = response.data || [];
+    renderUsers(allUsers);
+    
+    // FIX: Attach event listeners for search and filter if they exist in the HTML
+    const searchInput = $('#user-search');
+    const statusFilter = $('#status-filter');
+    
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+    if (statusFilter) {
+      statusFilter.addEventListener('change', applyFilters);
+    }
+    
+  } catch (error) {
+    const tbodyErr = $('.datatable tbody');
+    if (tbodyErr) tbodyErr.innerHTML = `<tr><td colspan="10" class="text-center text-danger">Failed to load users.</td></tr>`;
+  }
+}
+
+// FIX: Dedicated render function
+function renderUsers(usersToRender) {
+  const tbody = $('.datatable tbody');
+  if (!tbody) return;
+  
+  if (usersToRender.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="10" class="text-center">No users found.</td></tr>`;
+    return;
   }
   
-  tbody.innerHTML = users.map(user => `
-            <tr>
-                <td>${user.username || user.email}</td>
-                <td>${formatCurrency(user.balance || 0)}</td>
-                <td>${formatCurrency(user.deposits || 0)}</td> 
-                <td>${formatCurrency(user.spent || 0)}</td>
-                <td>${formatCurrency(user.refunds || 0)}</td> 
-                <td>
-                    <button class="btn btn--outline btn--sm" onclick="openAdjustModal('${user.id}')">Adjust Balance</button>
-                </td>
-            </tr>
-        `).join('');
-  
- } catch (error) {
-  tbody.innerHTML = `<tr><td colspan="6" class="text-center text-danger">Failed to load wallet data.</td></tr>`;
-  console.error('Failed to load wallets:', error);
- }
+  tbody.innerHTML = usersToRender.map(user => {
+    // FIX: Format phone number for WhatsApp (remove spaces, remove leading +)
+    const rawPhone = user.phoneNumber || '';
+    const cleanPhone = rawPhone.replace(/\s+/g, '').replace(/^\+/, '');
+    const waLink = cleanPhone ? `https://wa.me/${cleanPhone}` : '#';
+    const phoneHtml = cleanPhone 
+      ? `<a href="${waLink}" target="_blank" style="color: var(--primary-color); text-decoration: none;">${rawPhone}</a>` 
+      : 'N/A';
+
+    return `
+      <tr>
+        <td>${user.id}</td>
+        <td>${user.username}</td>
+        <td>${user.email}</td>
+        <td>${phoneHtml}</td>
+        <td>${user.accountId || 'N/A'}</td>
+        <td>${formatCurrency(user.balance || 0)}</td>
+        <td><span class="badge badge--${user.status === 'active' ? 'success' : 'danger'}">${user.status}</span></td>
+        <td>${user.role}</td>
+        <td>${formatDate(user.createdAt)}</td>
+        <td>
+          <button class="btn btn--outline btn--sm" onclick="toggleUserStatus('${user.id}', '${user.status}')">
+            ${user.status === 'active' ? 'Suspend' : 'Activate'}
+          </button>
+        </td>
+      </tr>
+    `;
+  }).join('');
 }
 
-// 1. Opens the modal and saves which user we are editing
-function openAdjustModal(userId) {
- activeUserId = userId;
- const modal = document.getElementById('adjustWalletModal');
- if (modal) {
-  modal.classList.add('active'); // Opens the modal
- } else {
-  alert('Modal missing from HTML!');
- }
+// FIX: Client-side filter logic
+function applyFilters() {
+  const searchInput = $('#user-search');
+  const statusFilter = $('#status-filter');
+  
+  const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+  const statusValue = statusFilter ? statusFilter.value : 'all';
+  
+  const filtered = allUsers.filter(user => {
+    // Search match (checking username, email, id, accountId, phone)
+    const matchesSearch = !searchTerm || 
+      (user.username && user.username.toLowerCase().includes(searchTerm)) ||
+      (user.email && user.email.toLowerCase().includes(searchTerm)) ||
+      (user.id && user.id.toLowerCase().includes(searchTerm)) ||
+      (user.accountId && String(user.accountId).toLowerCase().includes(searchTerm)) ||
+      (user.phoneNumber && user.phoneNumber.toLowerCase().includes(searchTerm));
+      
+    // Status match
+    const matchesStatus = statusValue === 'all' || user.status === statusValue;
+    
+    return matchesSearch && matchesStatus;
+  });
+  
+  renderUsers(filtered);
 }
 
-// 2. Submits the adjustment to the backend
-async function saveWalletAdjust(event) {
- event.preventDefault();
- 
- if (!activeUserId) {
-  showToast('No user selected.', 'error');
-  return;
- }
- 
- const amount = parseFloat(document.getElementById('adjustAmount').value);
- const action = document.getElementById('adjustAction').value; // 'add' or 'subtract'
- const note = document.getElementById('adjustNote').value;
- 
- try {
-  showToast('Updating balance...', 'info');
-  // Call the new API function
-  await api.adjustWallet(activeUserId, amount, action, note);
-  
-  showToast('Balance updated successfully!', 'success');
-  
-  // Close modal and reset form
-  document.getElementById('adjustWalletModal').classList.remove('active');
-  document.getElementById('adjustWalletForm').reset();
-  activeUserId = null;
-  
-  // Reload the table to show new balance
-  initWallets();
- } catch (error) {
-  showToast(error.message || 'Failed to adjust balance', 'error');
- }
-}
-
-// Expose to window for HTML buttons
-window.openAdjustModal = openAdjustModal;
-window.saveWalletAdjust = saveWalletAdjust;
+window.toggleUserStatus = async (userId, currentStatus) => {
+  const newStatus = currentStatus === 'active' ? 'suspended' : 'active';
+  try {
+    await api.updateUserStatus(userId, newStatus);
+    showToast(`User ${newStatus === 'active' ? 'activated' : 'suspended'} successfully`, 'success');
+    
+    // FIX: Update local state and re-render to preserve search/filter context
+    const userIndex = allUsers.findIndex(u => u.id === userId);
+    if (userIndex !== -1) {
+      allUsers[userIndex].status = newStatus;
+    }
+    applyFilters(); 
+  } catch (error) {
+    showToast('Failed to update user status', 'error');
+  }
+};
