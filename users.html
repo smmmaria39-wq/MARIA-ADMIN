@@ -73,11 +73,13 @@
                 <div class="card table-card">
                     <div class="table-toolbar">
                         <div class="table-filters">
-                            <input type="text" class="form-input form-input--sm" placeholder="Search users...">
-                            <select class="form-input form-select form-input--sm">
-                                <option>All Statuses</option>
-                                <option>Active</option>
-                                <option>Suspended</option>
+                            <!-- FIX: Added ID to search input -->
+                            <input type="text" id="user-search" class="form-input form-input--sm" placeholder="Search users...">
+                            <!-- FIX: Added ID to status filter -->
+                            <select id="status-filter" class="form-input form-select form-input--sm">
+                                <option value="all">All Statuses</option>
+                                <option value="active">Active</option>
+                                <option value="suspended">Suspended</option>
                             </select>
                         </div>
                     </div>
@@ -85,7 +87,17 @@
                         <table class="table datatable">
                             <thead>
                                 <tr>
-                                    <th>User ID</th><th>Username</th><th>Email</th><th>Balance</th><th>Status</th><th>Role</th><th>Joined</th><th>Actions</th>
+                                    <th>User ID</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <!-- FIX: Added new columns -->
+                                    <th>Phone Number</th>
+                                    <th>Account ID</th>
+                                    <th>Balance</th>
+                                    <th>Status</th>
+                                    <th>Role</th>
+                                    <th>Joined</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
