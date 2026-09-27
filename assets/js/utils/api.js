@@ -2,7 +2,7 @@
 // API Utility (Live Backend Only)
 // ===============================================
 
-const API_BASE_URL = 'https://smmmaria-backend-production-3ae4.up.railway.app/api/v1';
+const API_BASE_URL = 'https://smmmaria-backend-production-f97d.up.railway.app/api/v1';
 
 async function request(endpoint, method = 'GET', body = null) {
  const token = localStorage.getItem('smmmaria_token');
