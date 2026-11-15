@@ -40,7 +40,9 @@ document.addEventListener('DOMContentLoaded', async () => {
  initDropdowns();
  
  // Load the specific module for the current page
- const pageName = document.body.getAttribute('data-page');
+ const requestedPage = document.body.getAttribute('data-page');
+ const pageAliases = { 'admin-chat': 'chat', 'create-child-panel': 'create-panel', 'child-panel-details': 'panel-details', 'child-panel-wallet': 'panel-wallet' };
+ const pageName = pageAliases[requestedPage] || requestedPage;
  
  if (pageName && pageName !== 'login') {
   try {
@@ -49,7 +51,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     module.default();
    }
   } catch (error) {
-   console.warn(`No specific module found for page: ${pageName}`, error);
+   console.error(`Failed to initialize admin page module: ${pageName}`, error);
+   const main = document.querySelector('.content-area');
+   if (main && !main.querySelector('[data-module-error]')) { const notice = document.createElement('div'); notice.dataset.moduleError = 'true'; notice.className = 'card'; notice.setAttribute('role','alert'); notice.textContent = 'This page could not finish loading. Refresh the page or contact the administrator.'; main.prepend(notice); }
   }
  }
 });
