@@ -261,7 +261,7 @@ async function handleSend() {
   if (activeChat === 'private' && selectedUserId) {
    await api.adminSendPrivateMessage(selectedUserId, payload);
   } else if (activeChat === 'public') {
-   await api.sendPublicMessage(payload); // Admin uses same public endpoint
+   throw new Error('Public chat sending is not available: the supplied admin chat API exposes public message retrieval and deletion only.');
   }
   
   messageInputEl.value = '';
