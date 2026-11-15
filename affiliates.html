@@ -31,6 +31,8 @@
             <nav class="sidebar__nav"><ul class="sidebar__menu">
                 <li class="sidebar__item"><a href="dashboard.html" class="sidebar__link"><span class="link-text">Dashboard</span></a></li>
                 <li class="sidebar__item"><a href="users.html" class="sidebar__link"><span class="link-text">Users</span></a></li>
+                <li class="sidebar__item"><a href="api-clients.html" class="sidebar__link"><span class="link-text">API Clients</span></a></li>
+                <li class="sidebar__item"><a href="api-activity.html" class="sidebar__link"><span class="link-text">API Activity</span></a></li>
                 <li class="sidebar__item"><a href="orders.html" class="sidebar__link"><span class="link-text">Orders</span><span class="badge badge--notification">5</span></a></li>
                 <li class="sidebar__item"><a href="services.html" class="sidebar__link"><span class="link-text">Services</span></a></li>
                 <li class="sidebar__item"><a href="categories.html" class="sidebar__link"><span class="link-text">Categories</span></a></li>
@@ -66,30 +68,10 @@
             </header>
 
             <main class="content-area">
-                <div class="breadcrumb"><a href="dashboard.html">Admin</a> / <span>Affiliates</span></div>
-                <div class="page-header">
-                    <h1 class="page-title">Affiliate Program</h1>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="card stat-card"><div class="stat-card__top"><span class="stat-card__label">Total Referrals</span></div><h3 class="stat-card__value">425</h3></div>
-                    <div class="card stat-card"><div class="stat-card__top"><span class="stat-card__label">Active Affiliates</span></div><h3 class="stat-card__value">120</h3></div>
-                    <div class="card stat-card"><div class="stat-card__top"><span class="stat-card__label">Total Paid Out</span></div><h3 class="stat-card__value text-gold">$12,400</h3></div>
-                    <div class="card stat-card"><div class="stat-card__top"><span class="stat-card__label">Pending Withdrawals</span></div><h3 class="stat-card__value text-warning">$1,250</h3></div>
-                </div>
-
-                <div class="card table-card">
-                    <div class="card__header"><h3 class="card__title">Top Affiliates</h3></div>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead><tr><th>User</th><th>Referral Code</th><th>Signups</th><th>Earned</th><th>Status</th><th>Actions</th></tr></thead>
-                            <tbody>
-                                <tr><td>john_doe</td><td>JOHN123</td><td>45</td><td>$1,200</td><td><span class="badge badge--success">Active</span></td><td><button class="btn btn--outline btn--sm">View</button></td></tr>
-                                <tr><td>crypto_max</td><td>MAXCRYPTO</td><td>32</td><td>$850</td><td><span class="badge badge--warning">Pending Payout</span></td><td><button class="btn btn--outline btn--sm">View</button></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+              <div class="breadcrumb"><a href="dashboard.html">Admin</a> / <span>Affiliates</span></div>
+              <div class="page-header"><h1 class="page-title">Affiliate Program</h1></div>
+              <section class="card affiliate-status"><h3>Affiliate management is not connected yet</h3><p>The current backend source does not expose affiliate administration endpoints or a documented affiliate data model. The previous demo totals and sample affiliate accounts have been removed so they cannot be mistaken for real business data.</p><p><strong>Backend work required:</strong> referral attribution, affiliate profiles, commission ledger, withdrawal requests, payout approvals and audit history. These must be implemented server-side before this page can safely manage commissions or payments.</p><span class="badge badge--warning">Awaiting backend implementation</span></section>
+              <section class="card table-card"><div class="card__header"><h3 class="card__title">Affiliate records</h3></div><div class="table-responsive"><table class="table"><thead><tr><th>Affiliate</th><th>Referral code</th><th>Referrals</th><th>Commission balance</th><th>Status</th></tr></thead><tbody><tr><td colspan="5">No affiliate endpoint is currently available. No sample records are displayed.</td></tr></tbody></table></div></section>
             </main>
             <footer class="footer"><p class="footer__text">© 2023 SMMMARIA Admin Panel. All rights reserved.</p></footer>
         </div>
